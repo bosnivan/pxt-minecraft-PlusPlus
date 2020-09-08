@@ -34,9 +34,9 @@ namespace PlusPlus {
 	 * @param height Height of the elevator, eg: 10
      */
     //% weight=99
-    //% blockId="pp_soul_sand_water_elevator" block="%height blocks high soul sand water elevator"
+    //% blockId="pp_soul_sand_water_elevator" block="soul sand water elevator with height of %height blocks"
 	export function soul_sand_water_elevator(height: number) {
-		position = positions.groundPosition(player.position())
+		let position: Position = positions.groundPosition(player.position())
 		blocks.fill(GLASS, positions.add(position, pos(-1, 0, 4)), positions.add(position, pos(-1, height, 4)), FillOperation.Replace)
 		blocks.fill(GLASS, positions.add(position, pos(0, 0, 5)), positions.add(position, pos(0, height, 5)), FillOperation.Replace)
 		blocks.fill(GLASS, positions.add(position, pos(1, 0, 4)), positions.add(position, pos(1, height, 4)), FillOperation.Replace)
