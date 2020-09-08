@@ -5,7 +5,7 @@ namespace PlusPlus {
      * BUD powered piston simple flying machine.
      */
     //% weight=100
-    //% blockId="pp_simple_flying_machine" block="simple plying machine"
+    //% blockId="pp_simple_flying_machine" block="simple flying machine"
     export function simple_flying_machine() {
         let position: Position = player.position()
 		blocks.place(blocks.blockWithData(PISTON, 5), positions.add(position, pos(1, 1, 4)))
