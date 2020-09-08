@@ -29,4 +29,27 @@ namespace PlusPlus {
 		*/
     }
 
+    /**
+     * Soul sand water elevator.
+	 * @param height Height of the elevator, eg: 10
+     */
+    //% weight=99
+    //% blockId="pp_soul_sand_water_elevator" block="%height blocks high soul sand water elevator"
+	export function soul_sand_water_elevator(height: number) {
+		position = positions.groundPosition(player.position())
+		blocks.fill(GLASS, positions.add(position, pos(-1, 0, 4)), positions.add(position, pos(-1, height, 4)), FillOperation.Replace)
+		blocks.fill(GLASS, positions.add(position, pos(0, 0, 5)), positions.add(position, pos(0, height, 5)), FillOperation.Replace)
+		blocks.fill(GLASS, positions.add(position, pos(1, 0, 4)), positions.add(position, pos(1, height, 4)), FillOperation.Replace)
+		blocks.fill(GLASS, positions.add(position, pos(0, 2, 3)), positions.add(position, pos(0, height, 3)), FillOperation.Replace)
+		blocks.fill(GLASS, positions.add(position, pos(-1, height, 3)), positions.add(position, pos(1, height, 5)), FillOperation.Replace)
+		blocks.place(GLASS, positions.add(position, pos(-1, 0, 3)))
+		blocks.place(GLASS, positions.add(position, pos(-1, 1, 3)))
+		blocks.place(GLASS, positions.add(position, pos(1, 0, 3)))
+		blocks.place(GLASS, positions.add(position, pos(1, 1, 3)))
+		player.execute("/setblock " + position.getValue(Axis.X) + " " + position.getValue(Axis.Y) + " " + (position.getValue(Axis.Z) + 3) + " wall_sign 5 replace")
+		player.execute("/setblock " + position.getValue(Axis.X) + " " + (position.getValue(Axis.Y) + 1) + " " + (position.getValue(Axis.Z) + 3) + " wall_sign 5 replace")
+		blocks.place(SOUL_SAND, positions.add(position, pos(0, -1, 4)))
+		blocks.place(WATER, positions.add(position, pos(0, height, 4)))
+	}
+
 }
