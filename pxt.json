@@ -1,0 +1,17 @@
+{
+    "name": "pxt-plusplus",
+    "version": "0.1.0",
+    "description": "Various Minecraft designs made with MakeCode.",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "main.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
